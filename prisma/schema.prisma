@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+//Relacionando modelos con prisma:
+//*categoria(sera la relacion) luego se relaciona con el Modelo de Categoria, luego le dices que es una relacion = @relation( fields: [categoriaId], references: [id])
+//@relation: debes pasarle cual de estos campos este caso de Producto tendra relacion con categoria, cuando relacionas una tabla con otra, debes saber que ese campo con el cual relaciona debe tener el mismo tipo de dato
+//fields: [que campo del actual(o sea de los campos de producto) vas a relacionar]
+//references: [cual es el campo(de la otra tabla, este caso de categoria, sera la referencia a relacionar)]
+model Producto {
+  id Int @id @default(autoincrement())
+  nombre String
+  precio Float
+  imagen String
+  categoria Categoria @relation( fields: [categoriaId], references: [id])
+  categoriaId Int
+}
+//tambien debes pasarle la relacion a la otra tabla
+//Producto: Producto[], con ese arreglo le decimos que va a ser una collecion este caaso de productos, una coleccion completa
+model Categoria {
+  id Int @id @default(autoincrement())
+  nombre String
+  icono String
+  productos Producto[]
+}
+
+model Orden {
+  id Int @id @default(autoincrement())
+  nombre String
+  fecha String
+  total Float
+  pedido Json
+  estado Boolean @default(false)
+}
