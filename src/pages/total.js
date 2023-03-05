@@ -21,7 +21,7 @@ export default function Total() {
         <Layout
             pagina={'Total a Pagar'}
         >
-            <h1 className="text-4xl font-bold"><span className="underline decoration-amber-400">Total</span> y Confirmar Pedido
+            <h1 className="text-4xl font-bold"><span className="underline decoration-amber-400">Total</span>
             
             </h1>
             <p className="my-10 text-2xl underline decoration-amber-400">Confirma tu pedido

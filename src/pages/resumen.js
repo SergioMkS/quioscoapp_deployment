@@ -16,7 +16,7 @@ export default function Resumen() {
             </p>
 
             {pedido.length === 0 ? (
-                <p className="text-2xl text-center">
+                <p className="text-sm text-center md:text-2xl">
                     No Hay Elementos en tu pedido
                 </p>
             ) : (

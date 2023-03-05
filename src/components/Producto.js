@@ -9,7 +9,7 @@ const Producto = ({producto}) => {
     //recuerda que este producto lo extraiste de la categoria actual y en el archivo Api include: true hiciste esa magia
     const {nombre, imagen, precio} = producto
   return (
-    <div className="flex flex-col items-center justify-center p-3 border shadow-sm border-slate-100">
+    <div className="flex flex-col items-center justify-center p-2 border shadow-sm md:p-3 border-slate-100">
         <Image 
             src={`/assets/img/${imagen}.jpg`} 
             width={200} 
@@ -17,15 +17,15 @@ const Producto = ({producto}) => {
             alt={`imagen de ${nombre}`}
         />
 
-        <div className="w-full p-5">
-            <h3 className="text-xl font-semibold">{nombre}</h3>
-            <p className="mt-5 text-4xl font-black text-amber-500">
+        <div className="w-full p-4 md:p-5">
+            <h3 className="text-xs font-semibold sm:text-sm md:text-xl">{nombre}</h3>
+            <p className="mt-5 text-sm font-black md:text-4xl text-amber-500">
                 {formatearDinero(precio)}
             </p>
 
 
             <button
-                className="w-full p-2 mt-5 font-semibold text-white bg-indigo-600 hover:bg-indigo-700 hover:text-slate-100"
+                className="w-full p-2 mt-5 text-xs font-semibold text-white bg-indigo-600 sm:text-sm md:text-base hover:bg-indigo-700 hover:text-slate-100"
                 type="button"
                 onClick={() => {
                         handleChangeModal();

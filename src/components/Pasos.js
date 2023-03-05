@@ -30,7 +30,7 @@ const Pasos = () => {
                     onClick={() => {
                        router.push(paso.url)
                     }}
-                    className="text-2xl font-bold drop-shadow-md hover:drop-shadow-2xl hover:text-amber-400"
+                    className="p-2 text-sm font-bold border sm:text-xl md:text-2xl drop-shadow-md hover:drop-shadow-2xl hover:text-amber-400 hover:border-amber-500"
                     key={paso.paso}
                 >
                     {paso.nombre}

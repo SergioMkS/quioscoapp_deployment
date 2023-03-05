@@ -5,20 +5,20 @@ import useQuiosco from "@/hooks/useQuiosco"
 const ResumenProducto = ({producto}) => {
     const {handleEditarCantidades, handleEliminarProducto} = useQuiosco()
   return (
-    <div className="flex items-center gap-10 p-5 mb-10 shadow">
+    <div className="flex flex-col items-center gap-10 p-5 mb-10 shadow md:flex-row">
         <div className="md:w-1/6">
             <Image
                 src={`/assets/img/${producto.imagen}.jpg`}
-                width={300}
+                width={400}
                 height={400}
                 alt={`imagen ${producto.nombre}`}
             />
         </div>
 
         <div className="md:w-4/6">
-            <p className="text-2xl font-bold">{producto.nombre}</p>
-            <p className="mt-2 text-xl font-bold">Cantidad: {producto.cantidad}</p>
-            <p className="mt-2 text-xl font-bold text-amber-500">Precio: {formatearDinero(producto.precio)}</p>
+            <p className="text-base font-bold md:text-2xl">{producto.nombre}</p>
+            <p className="mt-2 text-base font-bold md:text-xl">Cantidad: {producto.cantidad}</p>
+            <p className="mt-2 text-base font-bold md:text-xl text-amber-500">Precio: {formatearDinero(producto.precio)}</p>
             <p className="mt-2 text-sm text-gray-700 ">
                 Subtotal: {formatearDinero(producto.precio * producto.cantidad)}
             </p>

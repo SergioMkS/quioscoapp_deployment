@@ -19,7 +19,7 @@ const ModalProducto = () => {
     },[producto, pedido])
     
   return (
-    <div className="gap-10 md:flex">
+    <div className="flex items-center gap-10 flex-column md:flex">
         <div className="md:w-1/3">
             <Image 
                 src={`/assets/img/${producto.imagen}.jpg`} 
